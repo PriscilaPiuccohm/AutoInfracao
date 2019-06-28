@@ -2,27 +2,41 @@ package br.gov.sc.ciasc.transito.ContagemPontos.services;
 
 import br.gov.sc.ciasc.transito.ContagemPontos.domain.AutoInfracao;
 //import jdk.vm.ci.meta.Local;
+import br.gov.sc.ciasc.transito.ContagemPontos.repository.AutoInfracaoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AutoInfracaoService {
 
+    @Autowired
+    private AutoInfracaoRepository autoInfracaoRepository;
+
+    public List<AutoInfracao> buscarPorCpf(String cpf) {
+        return autoInfracaoRepository.findByCpf(cpf);
+    }
+
+    public int buscarPontuacaoTotalPorCpf(String cpf) {
+        List<AutoInfracao> infracoes = buscarPorCpf(cpf);
+
+        return somarPontos(infracoes);
+    }
+    public String verificarCarteiraSuspensaPorCpf(String cpf){
+        List<AutoInfracao> infracaoList = buscarPorCpf(cpf);
+        return verifcaPontuacao5Anos(infracaoList,LocalDate.now());
+    }
 
     public int somarPontos(List<AutoInfracao> infracaoList) {
         int pontuacao = 0;
 
         for (AutoInfracao autoInfracao : infracaoList) {
             pontuacao += autoInfracao.getNumeroDePontos();
-
-
         }
-
         return pontuacao;
-
-
     }
 
     public int somarPontosAnual(List<AutoInfracao> infracaoList, LocalDate dataEspecifica) {
@@ -80,7 +94,7 @@ public class AutoInfracaoService {
         return pontuacao;
     }
 
-    public int verifcaPontuacao5Anos(List<AutoInfracao> infracaoList, LocalDate dataEspecifica) {
+    public String verifcaPontuacao5Anos(List<AutoInfracao> infracaoList, LocalDate dataEspecifica) {
         int pontuacao = 0;
         int i;
         int j;
@@ -96,13 +110,13 @@ public class AutoInfracaoService {
                     if (autoInfracao2.getDataAutuacao().isAfter(autoInfracao.getDataAutuacao()) && autoInfracao2.getDataAutuacao().isBefore(autoInfracao.getDataAutuacao().plusYears(1)))
                         pontuacao += autoInfracao2.getNumeroDePontos();
                     if (pontuacao >= 20) {
-                        return pontuacao;
+                        return "Carteira Suspensa";
                     }
                 }
             }
         }
 
-        return -1;
+        return "Carteira Ativa";
     }
 
 }

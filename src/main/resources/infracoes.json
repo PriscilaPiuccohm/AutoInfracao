@@ -1,0 +1,123 @@
+[
+ {
+   "id" : 123456,
+   "cpf": 91030226172,
+   "placa": "MFB4008",
+   "orgao": 100,
+   "numeroAuto": "R266665179",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "2014-11-28",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123457,
+   "cpf": 91030226172,
+   "placa": "MFB4008",
+   "orgao": 8784,
+   "numeroAuto": "8784130801",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "20/12/2014",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123458,
+   "cpf": 91030226172,
+   "placa": "MFB4008",
+   "orgao": 8034,
+   "numeroAuto": "55666619E",
+   "codigoInfracao": "5541-2",
+   "dataAutuacao": "22/01/2015",
+   "pontos": "3-LEVE",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123459,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 300,
+   "numeroAuto": "E018546073",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "30/03/2015",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123451,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 126200,
+   "numeroAuto": "1J9272644",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "04/07/2016",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123452,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 8001,
+   "numeroAuto": "P00AJ0008M",
+   "codigoInfracao": "7366-2",
+   "dataAutuacao": "14/09/2016",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123453,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 8779,
+   "numeroAuto": "8779705543",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "26/12/2016",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123454,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 8001,
+   "numeroAuto": "54473774F",
+   "codigoInfracao": "5550-0",
+   "dataAutuacao": "03/08/2017",
+   "pontos": "4-MÉDIA",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123455,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 8001,
+   "numeroAuto": "P02UQ000HE",
+   "codigoInfracao": "5568-0",
+   "dataAutuacao": "03/03/2018",
+   "pontos": "5-GRAVE",
+   "situacao": "ATIVOS"
+ },
+ {
+   "id" : 123416,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 100,
+   "numeroAuto": "R322275636",
+   "codigoInfracao": "7455-0",
+   "dataAutuacao": "03/07/2016",
+   "pontos": "4-MÉDIA",
+   "situacao": "EM GRAU DE RECURSO"
+ },
+ {
+   "id" : 123426,
+   "cpf": 91030226172,
+   "placa": "MJU9180",
+   "orgao": 8001,
+   "numeroAuto": "54712441G",
+   "codigoInfracao": "5541-3",
+   "dataAutuacao": "27/02/2019",
+   "pontos": "5-GRAVE",
+   "situacao": "EM GRAU DE RECURSO"
+ }
+]

@@ -1,17 +1,19 @@
 package br.gov.sc.ciasc.transito.ContagemPontos.domain;
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.util.Objects;
+
 
 @Data
+@Entity
 public class AutoInfracao {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String codigoInfracao;
     private String placa;
     private String numeroAuto;
@@ -19,8 +21,9 @@ public class AutoInfracao {
     private String situacao;
     private Long orgao;
     private LocalDate dataAutuacao;
+    private String cpf;
 
-
+    @JsonIgnore
     public int getNumeroDePontos() {
         if(getVerificarPadraoPontuacao()) {
             if(situacao.equals("Em recurso")){
@@ -31,18 +34,20 @@ public class AutoInfracao {
                 return Integer.parseInt(ponto[0]);
             }
         }
-            throw new IllegalArgumentException("Pontuação Inválida");
+        throw new IllegalArgumentException("Pontuação Inválida");
     }
 
+    @JsonIgnore
     public boolean getVerificarPadraoPontuacao(){
 
-        if(pontos.equals("3-Leve") ||pontos.equals("4-Média")|| pontos.equals("5-Grave")||pontos.equals("7-Gravíssima")){
+        if(pontos.toUpperCase().equals("3-LEVE") ||pontos.toUpperCase().equals("4-MÉDIA")|| pontos.toUpperCase().equals("5-GRAVE")||pontos.toUpperCase().equals("7-GRAVÍSSIMA")){
             return true;
         }
 
         return false;
     }
 
+    @JsonIgnore
     public boolean getVerificarSituacao(){
         if(situacao.equals("Ativo") || situacao.equals("Em recurso")){
             return true;

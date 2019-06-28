@@ -54,6 +54,14 @@ public class AutoInfracaoTest {
     }
 
     @Test
+    public void VerificarPadraoPontuacaoMaiusculo() {
+        AutoInfracao ai = new AutoInfracao();
+        ai.setPontos("7-GRAVÍSSIMA");
+        ai.setSituacao("Ativo");
+        assertTrue(ai.getVerificarPadraoPontuacao());
+    }
+
+    @Test
     public void VerificarPadraoPontucao2() {
         AutoInfracao ai = new AutoInfracao();
         ai.setPontos("7-Gravíssima");
@@ -273,6 +281,6 @@ public class AutoInfracaoTest {
 
         infracaoList = Arrays.asList(ai, ai2, ai3,ai4,ai5,ai6,ai7,ai8,ai9);
         AutoInfracaoService ais = new AutoInfracaoService();
-        assertEquals(21,ais.verifcaPontuacao5Anos(infracaoList,LocalDate.of(2019,6,27)));
+        assertEquals("Carteira Suspensa",ais.verifcaPontuacao5Anos(infracaoList,LocalDate.of(2019,6,27)));
     }
 }
